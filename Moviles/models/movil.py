@@ -20,6 +20,6 @@ class Movil(models.Model):
         for record in self:
             if len(record.marca) < 1 or len(record.marca) > 113:
                 raise ValidationError("La marca debe tener entre 1 y 113 caracteres")
-
+    #Metodo para cambiar el manejo de productos moviles
     def name_get(self):
         return [(rec.id, rec.marca) for rec in self]
