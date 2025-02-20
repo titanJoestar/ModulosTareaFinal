@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista Formulario para el modelo movil -->
+    <record id="view_movil_form" model="ir.ui.view">
+        <field name="name">movil.form</field>
+        <field name="model">movil</field>
+        <field name="arch" type="xml">
+            <form string="Detalles del móvil">
+                <sheet>
+                    <group>
+                        <field name="sistemaoperativo"/>
+                        <field name="marca"/>
+                        <field name="gigas"/>
+                        <field name="color"/>
+                        <field name="precio"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Lista para el modelo movil -->
+    <record id="view_movil_tree" model="ir.ui.view">
+        <field name="name">movil.tree</field>
+        <field name="model">movil</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="marca"/>
+                <field name="sistemaoperativo"/>
+                <field name="gigas"/>
+                <field name="color"/>
+                <field name="precio"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Acción de Menú para movil -->
+    <record id="action_movil" model="ir.actions.act_window">
+        <field name="name">Móviles Disponibles</field>
+        <field name="res_model">movil</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

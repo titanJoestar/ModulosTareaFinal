@@ -1,0 +1,41 @@
+<odoo>
+    <!-- Vista Formulario corregida -->
+  <record id="view_moviles_form" model="ir.ui.view">
+      <field name="name">moviles.form</field>
+      <field name="model">moviles</field>
+      <field name="arch" type="xml">
+          <form string="Venta de móviles">
+              <sheet>
+                  <group>
+                      <!-- Quita widget="selection" -->
+                      <field name="telefono"/>
+                      <field name="precioventa" readonly="1"/>
+                  </group>
+                  <group>
+                      <field name="cantidad"/>
+                      <field name="preciototal" readonly="1"/>
+                  </group>
+              </sheet>
+          </form>
+      </field>
+  </record>
+
+<!-- Vista Lista corregida -->
+<record id="view_moviles_tree" model="ir.ui.view">
+    <field name="name">moviles.tree</field>
+    <field name="model">moviles</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="telefono"/>
+            <field name="cantidad"/>
+            <field name="preciototal"/>
+        </tree>
+    </field>
+</record>
+
+    <record id="action_moviles" model="ir.actions.act_window">
+        <field name="name">Ventas realizadas</field>
+        <field name="res_model">moviles</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
